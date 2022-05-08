@@ -6,6 +6,7 @@ game.StarterGui:SetCore("SendNotification", {
 
 getgenv().tpf = false;
 getgenv().af = false;
+player = tostring(game:GetService("Players").LocalPlayer);
 
 fh = game:GetService("Workspace").Floppa.Head; 
 
@@ -20,17 +21,24 @@ end
 function collectFloppa()
     spawn(function()
         while tpf do
-            pp.CFrame = new.CFrame(fh.CFrame.X, fh.CFrame.Y, fh.CFrame.Z)
+            pp.CFrame = CFrame.new(fh.CFrame.X, fh.CFrame.Y, fh.CFrame.Z)
             wait(0.5)
         end
     end) 
 end
 
-while getgenv().af do
-    h = game:GetService("Workspace").Floppa.Display.Frame.Hunger.text;
-    ch = tonumber(string.match(h, "%d%d"));
-    print(ch)
-    wait(0.1)
+function doFeed()
+    spawn(function ()
+        while getgenv().af do
+            h = game:GetService("Workspace").Floppa.Display.Frame.Hunger.text;
+            ch = tonumber(string.match(h, "%d%d"));
+            print(ch)
+            if ch > 90 then
+                
+            end
+            wait(0.5)
+        end
+    end)
 end
 
 local UILibrary = loadstring(game:HttpGet("https://pastebin.com/raw/V1ca2q9s"))()
@@ -54,6 +62,15 @@ end)
 
 local secondButton = ThirdPage.AddButton('Dark Webs', function ()
     pp.CFrame = CFrame.new (-12600,57,-16115);
+end)
+
+local fourthButton = ThirdPage.AddButton('UFO', function ()
+    pp.CFrame = CFrame.new(33.0250015, -84.5, 400.75);
+end)
+
+
+local fifthButton = ThirdPage.AddButton('Garden', function()
+    pp.CFrame = CFrame.new(-125.699181, 1.45374218, -39.549430)
 end)
 
 local firstToggle = SecondPage.AddToggle("Auto Collect Flopper", false, function (bool)
