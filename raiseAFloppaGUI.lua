@@ -30,11 +30,15 @@ end
 function doFeed()
     spawn(function ()
         while getgenv().af do
+            op = pp.CFrame
             h = game:GetService("Workspace").Floppa.Display.Frame.Hunger.text;
             ch = tonumber(string.match(h, "%d%d"));
             print(ch)
-            if ch > 90 then
-                
+            if ch < 30 then
+                print("fire remote event for food")
+                print("teleport to bowl")
+                print("Click")
+                pp.CFrame = op
             end
             wait(0.5)
         end
