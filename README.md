@@ -1,6 +1,6 @@
 # Purpose
 
-This repository contains all my publicly available scripts with some being open source
+This repository contains all my publicly available scripts with some being open source (this repository isnt intended for release yet and is still under development)
 
 ## Working Scripts
 
